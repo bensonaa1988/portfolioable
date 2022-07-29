@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     
+    
     'portfolioable',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,9 +84,9 @@ WSGI_APPLICATION = 'portfolioable.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'opinion_db',
-        'USER': 'ashley_benson',
-        'PASSWORD': '1234',
+        'NAME': 'portfolioable_db',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
 }
@@ -131,3 +132,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

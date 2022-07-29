@@ -19,8 +19,10 @@ from rest_framework import routers
 from portfolioable import views
 
 router = routers.DefaultRouter()
-
+router.register(r"portfolios", views.PortfolioViewSet)
+router.register(r"properties", views.PropertyViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('portfolios/', views.portfolio_list ),
+    path("", include(router.urls))
+    
 ]
