@@ -16,13 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
+from rest_framework_nested import routers
 from portfolioable import views
 
 router = routers.DefaultRouter()
 router.register(r"portfolios", views.PortfolioViewSet)
-router.register(r"properties", views.PropertyViewSet)
+property_router = routers.NestedDefaultRouter(
+    router,
+    r'portfolios',
+    lookup='portfolio')
+property_router.register(
+    r'properties',
+    views.PropertyViewSet,
+    basename='portfolio-property'
+)
+app_name = 'portfolio'    
+
+# router.register(r"properties", views.PropertyViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include(router.urls))
+    path("", include(router.urls)),
+    path("", include(property_router.urls))
     
 ]
