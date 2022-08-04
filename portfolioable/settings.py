@@ -34,8 +34,8 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 INSTALLED_APPS = [
     
     # 'nostatic', 
-    'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
+    # 'whitenoise.runserver_nostatic',
+    # 'django.contrib.staticfiles',
     'portfolioable',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -98,7 +98,7 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 WHITENOISE_USE_FINDERS = True
 
