@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # 'nostatic', 
     # 'whitenoise.runserver_nostatic',
     # 'django.contrib.staticfiles',
+    'corsheaders',
     'portfolioable',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,6 +51,8 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -59,6 +62,39 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# may have to add the deployed FE URL
+
+CORS_ALLOWED_ORIGINS = [
+
+"http://localhost:3000",
+"http://localhost:3001",
+
+]
+
+
+CORS_ALLOW_METHODS = [
+'DELETE',
+'GET',
+'OPTIONS',
+'PATCH',
+'POST',
+'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
+]
+
+
 
 ROOT_URLCONF = 'portfolioable.urls'
 
