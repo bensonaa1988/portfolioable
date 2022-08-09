@@ -65,14 +65,17 @@ MIDDLEWARE = [
 
 # may have to add the deployed FE URL
 
+# 
+
+# ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = False
+
 CORS_ALLOWED_ORIGINS = [
-
-"http://localhost:3000",
-"http://localhost:3001",
-
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
 ]
-ALLOWED_HOSTS=['*']
-CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_METHODS = [
 'DELETE',
