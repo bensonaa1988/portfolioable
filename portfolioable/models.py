@@ -1,3 +1,4 @@
+from operator import mod
 from django.db import models
 
 class Portfolio(models.Model):
@@ -13,6 +14,7 @@ class Property(models.Model):
     bedrooms = models.IntegerField()
     baths = models.IntegerField()
     rating =  models.IntegerField()
+    monthly_payment = models.IntegerField()
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)    
 
     # def __str__(self):

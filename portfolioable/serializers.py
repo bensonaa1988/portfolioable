@@ -16,4 +16,4 @@ class PortfolioableSerializer(serializers.ModelSerializer):
 class PropertySerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
-        fields = ['portfolio','id', 'address', 'city', 'state', 'bedrooms', 'baths', 'rating' ]
+        fields = ['portfolio','id', 'address', 'city', 'state', 'bedrooms', 'baths', 'rating', 'monthly_payment']
