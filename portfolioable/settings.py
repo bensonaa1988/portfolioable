@@ -70,6 +70,7 @@ MIDDLEWARE = [
 # ALLOWED_HOSTS=['*']
 CORS_ORIGIN_ALLOW_ALL = False
 
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -141,6 +142,7 @@ DATABASES['default'].update(db_from_env)
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 WHITENOISE_USE_FINDERS = True
+APPEND_SLASH=False
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

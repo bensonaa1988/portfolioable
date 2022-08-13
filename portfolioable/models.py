@@ -15,7 +15,7 @@ class Property(models.Model):
     baths = models.IntegerField()
     rating =  models.IntegerField()
     monthly_payment = models.IntegerField()
-    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)    
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE,related_name="properties")    
 
     # def __str__(self):
     #     return self.name 
